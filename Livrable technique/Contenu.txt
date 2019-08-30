@@ -1,0 +1,23 @@
+Contenu du livrable technique 
+
+- Un dossier "Scripts" : il contient cinq dossiers, dont quatre avec les scripts Python et leur script d'exécution. Les dossiers sont numérotés de 1 à 4 d'après l'ordre selon lequel ils s'utilisent dans la démarche. Les scripts sont commentés afin de les comprendre et de les utiliser plus facilement. Il y a également un dossier numéroté zéro, contenant le script utilisé pour les manipulations avec le logiciel RStudio.
+
+- Un dossier "Dictionnaires" : il contient trois dossiers. Le dossier "Annotation" contient les dictionnaires de termes alpha et num, ainsi qu'un dictionnaire où certains termes polylexicaux ont été rajoutés. Le dossier "Normalisation" contient les termes modernes des mots écrits dans une forme désuète dans le texte. Le dossier "Orthographe" contient les dictionnaires de mots à corriger dans le texte pour la partie "Nettoyage de texte" (chaque dictionnaire ne corrige pas le même chapitre), ainsi que le dictionnaire d'italien à appeler pour le script "2_verification_orthographique.py".
+
+- Un dossier "Diagrammes d'activité" : il contient cinq dossiers, avec pour chacun un ou plusieurs schémas représentant les opérations effectués avec les scripts.
+
+- Un dossier "Tableaux d'alignement" : il contient les deux tableaux d'alignement, avancé et simple, réalisés pendant le stage avec un nombre limité de mots choisis de la liste de termes. Les tableaux sont au format CSV, en UTF-8, avec une séparation par des points virgules et le contenu de chaque case entre guillemets.
+
+- Un dossier "Termes juridiques" : il contient la liste des termes juridiques en français relevés par Claudine Moulin, puis cette même liste avec les termes en italien, français et allemand. Le dossier contient également la liste des termes juridiques en italien, français et anglais, avec leurs identifiants. "termes_alpha" contient la liste avec les identifiants avec un terme anglais apposé. "termes_num" contient la liste avec les identifiants avec un numéro. Les listes sont au format CSV, en UTF-8, avec une séparation par des points virgules et le contenu de chaque case entre guillemets.
+
+- Un dossier "Corpus" : il contient le schéma montrant la généalogie des éditions italiennes, françaises, allemandes et anglaises du corpus, ainsi que le tableau qui présente les différentes informations disponibles à propos des éditions du corpus.
+
+- Un dossier "Graphiques" : il contient deux dossiers, RStudio et TXM, comprenant chacun les graphiques produits pendant l'exploitation du logiciel. Le dossier RStudio est divisé par langue (En, Fr et It), avec dans chaque dossier les arbres/graphes et les nuages de mots produits pour les chapitres à disposition.
+
+- Un dossier "Fichiers d'ajout" : il contient trois dossiers. Le dossier "Liste de fréquence" contient les listes créées dans chaque langue pour enrichir les dictionnaires de langue du module Pyspellchecker. Le dossier "Fichier d'enrichissement" contient les fichiers de lexique d'enrichissement ajoutés sur TXM pour qu'il puisse encoder tous les mots correctement. Le dossier "Fichiers de métadonnées" contient le CSV de métadonnées pour l'italien, le français et l'anglais pour le chapitre 30/31/36, nécessaire pour l'ajout des fichiers sur TXM.
+
+- Un dossier "Étapes Nettoyage Texte" : il est divisé en trois dossiers, chacun d'une édition en une langue différente et il contient dans chaque dossier les différentes étapes de travail sur l'édition, depuis le PDF jusqu'à la version corrigée.
+
+- Un dossier "Étapes XML-TEI TXM" : il est divisé en trois dossiers, chacun d'une édition en une langue différente et il contient dans chaque dossier la version XML-TEI TXM produite par TXM puis les versions annotées par les termes normalisées puis par les termes juridiques avec l'identifiant alpha et numérique.
+
+- Un dossier "Instructions" : il contient deux fichiers. Le fichier "Installations.txt" présente les liens vers les pages d'installations des modules et logiciels utilisés pour la démarche, nécessaires pour faire fonctionner les scripts. Le fichier "Instructions TXM.txt" donne les instructions à suivre pour importer les différents fichiers sur TXM.

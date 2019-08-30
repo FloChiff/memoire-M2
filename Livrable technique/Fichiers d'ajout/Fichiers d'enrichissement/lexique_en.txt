@@ -1,0 +1,9 @@
+pretened	VVP	pretend
+&c	RB	etc
+falshood	NN	falsehood
+encreases	NNS	encrease
+shews	NNS	shew
+intrusted	VVN	intrust
+indeliable	JJ	indeliable
+rouzed	VVN	rouze
+accused	NN	accused

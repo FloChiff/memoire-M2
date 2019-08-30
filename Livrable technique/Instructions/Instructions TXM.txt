@@ -1,0 +1,34 @@
+Instructions pour obtenir le corpus annoté sur TXM :
+
+- Importer le lexique inconnu pour TreeTagger sur TXM
+	- Faire dans TXM Éditions --> Préférences --> TXM --> TAL --> TreeTagger
+	- Appuyer sur "Browse" dans l'option "Read auxiliary lexicon entries from a file"
+	- Sélectionner le fichier TXT de lexique créé en fonction de la langue choisie
+
+- Importer le corpus suivant la langue choisie avec le lexique
+	- Choisir l'option Importer --> TXT + CSV
+	- Vérifier que la langue d'import est bien celle du corpus
+	- Importer le corpus
+	
+Le corpus a été importé sur TXM et a donc crée un dossier de ces fichiers sous format XML avec les annotations TreeTagger
+
+- Saisir les nouvelles balises de normalisation et d'annotations (Il faut se référer aux scripts présents sur le Github : https://github.com/PSIG-EHESS/metalex)
+	- Suivre tout d'abord les informations des scripts de normalisation
+	- Les mots normalisés devraient correspondre à ce qui a été rajouté avec le lexique de la 1ère étape 
+	- Ils doivent être mis en plus dans un dictionnaire à importer dans le script
+	- Suivre le script shell donné en adaptant les dossiers d'entrée et de sortie
+	
+	- Suivre ensuite les informations des scripts d'annotation
+	- Il faut récupérer le dictionnaire de termes choisi et l'importer avec le script (vérifier le nom donné)
+	- Suivre le script shell donné en adaptant les dossiers d'entrée et de sortie
+	
+Le corpus possède maintenant toutes les modifications nécessaires pour l'analyse sur TXM et doit donc être importé sur le logiciel
+
+- Importer le corpus multilingue sur TXM
+	- Choisir l'option Importer --> XML-TEI TXM
+	- Sélectionner "Deviner" pour la langue du corpus car le corpus est multilingue
+	- Importer le corpus
+
+- Conserver ce corpus TXM
+	- Clic-droit sur le corpus à conserver
+	- Choisir Exporter --> Corpus au format binaire

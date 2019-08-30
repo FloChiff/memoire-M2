@@ -1,0 +1,6 @@
+from spellchecker import SpellChecker    
+
+spell = SpellChecker(language='fr')    
+
+
+spell.word_frequency.load_words([  'pédérastie',  "loix",  'assortit',  'moralistes',  'conjecturent',  'pardonnant',  'lorsqu',  'employe',  'consumant',  'triomphent',  'satiété',  'constatés',  'équivoques',  'chimériques',  'exalte',  'celle-là',  'compilations',  'celle-ci',  'eussent',  'enveloppent',  'moralistes',  'déclamer',  'corrigent',  'pardonnant',  'assortissent',  'dépérissement',  'voit-on',  'dis-je',  'eux-mêmes',  'affaiblies',  'déclamations',  'fausseté',  'dépendantes',  'imparfaites',  'assesseurs',  'loix',  'récuser',  'antécédentes',  'influât',  'quoiqu',  'asseoira',  'lui-même',  'palpables',  'accoutumés',  'dédaigné',  'hâté',  'dissipés',  'monastique',  'indolence',  'frémissement',  'prodigués',  'proportionnées',  'netteté',  'renversera', 'éprouvera', 'succéda', 'usurpation', 'maximes', 'réunirent', 'contraignit', 'insociabilité', 'décernée', 'encouru', 'bienfaisantes', 'réprouvée', 'agissante', 'écartera', 'relégué', 'formèrent', 'employe', 'songent', ])
