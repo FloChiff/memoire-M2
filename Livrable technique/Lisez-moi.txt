@@ -16,8 +16,8 @@ Contenu du livrable technique
 
 - Un dossier "Fichiers d'ajout" : il contient trois dossiers. Le dossier "Liste de fréquence" contient les listes créées dans chaque langue pour enrichir les dictionnaires de langue du module Pyspellchecker. Le dossier "Fichier d'enrichissement" contient les fichiers de lexique d'enrichissement ajoutés sur TXM pour qu'il puisse encoder tous les mots correctement. Le dossier "Fichiers de métadonnées" contient le CSV de métadonnées pour l'italien, le français et l'anglais pour le chapitre 30/31/36, nécessaire pour l'ajout des fichiers sur TXM.
 
-- Un dossier "Étapes Nettoyage Texte" : il est divisé en trois dossiers, chacun d'une édition en une langue différente et il contient dans chaque dossier les différentes étapes de travail sur l'édition, depuis le PDF jusqu'à la version corrigée.
+- Un dossier "Étapes Nettoyage Texte" : il est divisé en trois dossiers, chacun d'une édition en une langue différente et il contient dans chaque dossier les différentes étapes de travail sur l'édition, depuis le PDF jusqu'à la version corrigée.
 
-- Un dossier "Étapes XML-TEI TXM" : il est divisé en trois dossiers, chacun d'une édition en une langue différente et il contient dans chaque dossier la version XML-TEI TXM produite par TXM puis les versions annotées par les termes normalisées puis par les termes juridiques avec l'identifiant alpha et numérique.
+- Un dossier "Étapes XML-TEI TXM" : il est divisé en trois dossiers, chacun d'une édition en une langue différente et il contient dans chaque dossier la version XML-TEI TXM produite par TXM puis les versions annotées par les termes normalisées puis par les termes juridiques avec l'identifiant alpha et numérique.
 
 - Un dossier "Instructions" : il contient deux fichiers. Le fichier "Installations.txt" présente les liens vers les pages d'installations des modules et logiciels utilisés pour la démarche, nécessaires pour faire fonctionner les scripts. Le fichier "Instructions TXM.txt" donne les instructions à suivre pour importer les différents fichiers sur TXM.
