@@ -1,0 +1,65 @@
+\chapter{Scripts Python}
+\fancyhead[LO, RE]{Scripts Python}
+
+Pendant toute la durée de stage, le travail dépend de la création et de l'exécution de divers scripts utilisant le langage Python. Ces scripts sont présentés et expliqués dans le mémoire à l'aide de diagrammes d'activité et de courts paragraphes, pour illustrer la démarche réalisée. 
+Dans cette annexe, chacun des scripts qui a été mentionné dans le mémoire sera nommé et brièvement présenté. Ils seront également rattachés aux figures correspondantes dans le mémoire. Il est possible de retrouver chacun de ces scripts sur le Github de la Plateforme Géomatique, ainsi que la façon dont ils peuvent être executés, dans un repository dédié au projet MetaLEX\index{Projet MetaLEX} : \url{https://github.com/PSIG-EHESS/metalex}
+
+\section{OCR}
+\paragraph{ocr\_jpg.py} : Figure \ref{fig:OCR} 
+
+Script d'\acrshort{ocr}\index{OCR} pour les images au format \textsc{jpeg}
+
+\paragraph{ocr\_tiff.py} : Figure \ref{fig:OCR}
+
+Script d'\acrshort{ocr}\index{OCR} pour les images au format \textsc{tiff}
+
+\section{Nettoyage de texte}
+\paragraph{1\_mise\_en\_forme.py} : Figure \ref{fig:etape1}
+
+Script qui permet de supprimer les numéros de pages et la ponctuation dans un texte donné, ainsi que changer la mise en forme du texte, pour supprimer les nombreuses mises à la lige tout en conservant les structures de paragraphes
+
+\paragraph{script1.sh} : Script shell pour exécuter le script 1\_mise\_en\_forme.py
+
+\pagebreak
+
+\paragraph{2\_verification\_orthographique.py} : Figure \ref{fig:etape2}
+
+Script qui permet de repérer les mots inconnus dans un fichier donné selon un dictionnaire de langue choisi et qui place ses mots et la correction proposée dans un dictionnaire Python
+
+\paragraph{script2.sh} : Script shell pour exécuter le script 2\_verification\_orthographique.py
+
+\paragraph{3\_mise\_en\_forme\_bis.py} : Figure \ref{fig:etape3}
+
+Script qui permet de supprimer les numéros de pages dans un texte donné, ainsi que changer la mise en forme du texte, pour supprimer les nombreuses mises à la ligne tout en conservant les structures de paragraphes
+
+\paragraph{script3.sh} : Script shell pour exécuter le script 3\_mise\_en\_forme\_bis.py
+
+\paragraph{4\_correction\_orthographique.py} : Figure \ref{fig:etape5}
+
+Script qui permet de remplacer dans un fichier donné les mots erronés relevés par le deuxième script et trié lors du nettoyage du dictionnaire produit. Ces mots sont remplacés par la correction proposée comme valeur de la clé dans le dictionnaire
+
+\paragraph{script4fr.sh} : Script shell qui permet d'exécuter le script 4\_correction\_orthographique.py pour le cas des textes en français
+
+\section{Normalisation}
+\paragraph{script\_regex\_normalisation.py} : Figure \ref{fig:normalisation_txm}
+
+Script pour insérer, depuis un dictionnaire importé et dans un fichier \textsc{xml}, une nouvelle balise contenant la forme normalisée du mot, en utilisant les expressions régulières
+
+\paragraph{script\_xml\_normalisation.py} : Figure \ref{fig:normalisation_txm}
+
+Script pour insérer depuis un dictionnaire, importé et dans un fichier \textsc{xml}, une nouvelle balise contenant la forme normalisée du mot, en utilisant un module Python pour le \textsc{xml}
+
+\paragraph{script\_replace.sh} : Script pour exécuter l'un ou l'autre des deux scripts, en fonction du groupe de ligne non mis en commentaire 
+
+\pagebreak
+
+\section{Annotations}
+\paragraph{script\_regex\_annotation.py} : Figure \ref{fig:annotation_txm}
+
+Script pour insérer, depuis un dictionnaire importé et dans un fichier \textsc{xml}, une nouvelle balise contenant un identifiant lié à un terme juridique ou une valeur \og none \fg{}, en utilisant les expressions régulières
+
+\paragraph{script\_xml\_annotation.py} : Figure \ref{fig:annotation_xml}
+
+Script pour insérer, depuis un dictionnaire importé et dans un fichier \textsc{xml}, une nouvelle balise contenant un identifiant lié à un terme juridique ou une valeur \og none \fg{},  en utilisant un module Python pour le \textsc{xml}
+
+\paragraph{script\_annotations.sh} : Script pour exécuter l'un ou l'autre des deux scripts, en fonction du groupe de ligne non mis en commentaire

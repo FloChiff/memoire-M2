@@ -1,0 +1,263 @@
+% Mise en page de la structure du document
+\documentclass[a4paper,12pt, twoside]{book}
+% Encodage, qui permet de taper et faire apparaître directement les accents
+%\usepackage[utf8]{inputenc}
+% Voir si on remet ou pas le inputenc, savoir si vraiment utile
+%\usepackage[T1]{fontenc}
+% Langue
+\usepackage[french]{babel}
+% Police ?
+\usepackage{fontspec}
+% Ajout d'un package de couleurs et de nouvelles couleurs
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{HTML}{080D80}
+\definecolor{darkpink}{HTML}{E02781}
+% Permet de faire des liens à travers le document
+\usepackage{hyperref}
+% Mettre des couleurs dans les liens
+\hypersetup{
+colorlinks=true,
+linkcolor=black,
+urlcolor=darkblue,
+citecolor=darkpink}
+% Configuration de la mise en page
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setlength\parindent{1cm}
+\onehalfspacing
+\usepackage{lettrine}
+% Mise en place de la structure des pages en termes d'en-tête et pied de page.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE, RO]{\thepage}
+\setlength{\headheight}{15.5pt}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+% enlève les headers sur les pages vierges
+\usepackage{emptypage}
+% Ajout d'un sommaire
+\usepackage{shorttoc}
+% Paramètres pour une figure
+\usepackage[xetex]{graphicx}
+\usepackage{float}
+\usepackage[justification=centering]{caption}
+% Paramètres pour un long tableau dans le document et dans le pdf
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{pdflscape}
+% Ajout d'acronymes dans le document
+\usepackage[acronym, toc]{glossaries}
+\makeglossaries
+\input{Annexes/acronymes.tex}
+% Ajout d'un index dans le document
+\usepackage{imakeidx}
+\makeindex[title=Liste des noms et des termes clés, intoc]
+% Intégrer les tables, bibliographie, etc. automatiquement à la table des matières
+\usepackage{tocbibind}
+% Mettre des couleurs aux extraits de code dans le document
+\usepackage{minted}
+% Aide à la citation
+\usepackage[babel]{csquotes}
+% Configuration de la bibliographie
+\usepackage[backend=biber,
+sorting=ynt,
+style=enc]{biblatex}
+\addbibresource{Sources_bibliographiques/corpus.bib}
+\addbibresource{Sources_bibliographiques/biblio.bib}
+\nocite{*}
+
+
+\title{VERS UN ALIGNEMENT DE TRADUCTIONS ET D'ÉDITIONS À PARTIR D'UN LEXIQUE ET À TRAVERS UN CORPUS MULTILINGUE}
+\author{Floriane Chiffoleau - M2 TNAH}
+\date{Avril-Juillet 2019}
+
+\begin{document}
+\frontmatter
+\pagenumbering{Roman}
+\begin{titlepage}
+		\begin{center}
+			
+			\bigskip
+			
+			\begin{large}
+				\'ECOLE NATIONALE DES CHARTES
+			\end{large}
+			\begin{center}\rule{2cm}{0.02cm}\end{center}
+			
+			\bigskip
+			\bigskip
+			\bigskip
+			\begin{Large}
+				\textbf{Floriane Chiffoleau}\\
+			\end{Large}
+		%selon le cas
+			\begin{normalsize} \textit{licenciée ès lettres}\\
+			    \textit{licenciée en droit}\\
+				\textit{diplômée de master}
+			\end{normalsize}
+			
+			\bigskip
+			\bigskip
+			\bigskip
+			
+			\begin{Huge}
+				\textbf{VERS UN ALIGNEMENT DE TRADUCTIONS ET D'ÉDITIONS À PARTIR D'UN LEXIQUE ET À TRAVERS UN CORPUS MULTILINGUE}\\
+			\end{Huge}
+			\bigskip
+			\bigskip
+			\begin{LARGE}
+				\textbf{Travail sur \emph{Dei Delitti e delle Pene} du marquis de Beccaria}\\
+			\end{LARGE}
+			
+			\bigskip
+			\bigskip
+			\bigskip
+			\begin{large}
+			\end{large}
+			\vfill
+			
+			\begin{large}
+				Mémoire 
+				pour le diplôme de master \\
+				\og{} Technologies numériques appliquées à l'histoire \fg{} \\
+				\bigskip
+				2019
+			\end{large}
+			
+		\end{center}
+	\end{titlepage}
+
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+Issu d'une collaboration entre des membres de l'\acrshort{ehess} et de l'université de Trêves, le projet MetaLEX\index{Projet MetaLEX} vise à étudier l'évolution des langues historiques du droit en Europe, afin de créer une plateforme offrant un accès rapide et direct à la diversité lexicale du vocabulaire juridique dans le contexte spatio-temporel des langues juridiques nationales. C'est au sein de ce projet que s'inscrit ce stage, dont les enjeux sont la réalisation d'une généalogie, d'une océrisation\index{OCR!ocerisation@océrisation} et d'un alignement\index{Alignement} sur un corpus sélectionné. Ce dernier se compose des éditions en plusieurs langues d'un ouvrage qui a eu un grand retentissement et un rayonnement important dans l'Europe du XVIIIème siècle~: le \emph{Traité des délits et des peines\index{Traite des delits et des peines@Traité des délits et des peines}} du marquis de Beccaria\index{Beccaria, marquis de}.
+
+Pendant la période du stage, nous avons exploré le corpus dans toutes ses langues afin d'atteindre notre objectif. Outre un travail d'analyse et de statistiques textuelles de certains chapitres prédéterminés du corpus, nous avons mis en place une démarche pour effectuer un alignement semi-automatique, partiel, ciblé à partir d'un lexique juridique, par le biais de multiples scripts écrits en langage Python et de certains logiciels choisis pour ce projet. En partant d'un manuscrit numérisé, nous l'océrisons\index{OCR!ocerisation@océrisation} grâce au module \emph{Tesseract} et à un script. Ensuite, grâce à plusieurs autres scripts et modules, nous mettons le texte en forme et nous le corrigeons. Enfin, des scripts, des dictionnaires Python et l'exploitation de \textsc{txm} nous permettent d'encoder et d'annoter notre texte, dans le but de pouvoir aisément extraire les données nécessaires à la réalisation de l'alignement\index{Alignement}, que nous atteignons grâce au concordancier de \textsc{txm}.
+
+Nous obtenons ainsi comme résultat deux tableaux d'alignement, un simple et un avancé, ce qui nous donne la possibilité d'observer les similitudes et différences entre les éditions du corpus multilingue\index{Alignement!corpus multilingue} à partir d'une liste de termes juridiques prédéfinis et donc l'évolution de ces termes avec le temps et en fonction de la langue.
+
+\medskip
+
+\textbf{Mots-clés~:} Alignement ; marquis de Beccaria ; histoire du droit pénal ; \acrlong{ocr} ; statistique textuelle ; \acrlong{tal}
+
+\textbf{Informations bibliographiques~:} Floriane Chiffoleau, \textit{Vers un alignement de traductions et d'éditions à partir d'un lexique et à travers un corpus multilingue. Travail sur \emph{Dei Delitti e delle Pene} du marquis de Beccaria}, mémoire de master \og Technologies numériques appliquées à l'histoire \fg{}, dir. Thibault Clérice, \acrlong{enc}, 2019.
+
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+Je n'aurais pas pu réussir à réaliser ce stage et à écrire ce mémoire sans l'aide de nombreuses personnes.
+
+Je tiens à remercier tout d'abord l'équipe du master \og~Technologies numériques appliquées à l'histoire~\fg{} de l'\acrlong{enc} pour les enseignements dont j'ai pu bénéficier et notamment Thibault Clérice, en tant que responsable pédagogique, professeur et tuteur de stage, pour avoir répondu à mes questions et m'avoir aidé à la mise en \oe uvre de ce mémoire.
+
+Je souhaite ensuite remercier les membres du projet MetaLEX\index{Projet MetaLEX} pour m'avoir accepté au sein de leur équipe, pour les différentes réunions à propos de l'avancement du projet et des perspectives futures. Je souhaite dire merci notamment à Falk Bretschneider et à Rainer Maria Kiesow pour l'aide qu'ils m'ont apportée sur le corpus et concernant les questions que je me posais.
+
+Je tiens surtout à exprimer ma gratitude pour ma tutrice de stage à l'\acrshort{ehess}, Carmen Brando. Elle m'a guidé dans mon travail, a supervisé toute la démarche du projet, m'a aidé pour les difficultés que j'ai rencontrées dans certains aspects de mon travail et a relu tout mon mémoire, contribuant ainsi à y apporter les améliorations nécessaires.
+
+Je désire enfin exprimer ma reconnaissance à ma famille pour le soutien qu'elle m'a apporté pendant mes études et pour m'avoir supporté pendant l'écriture de ce mémoire. Je souhaite notamment remercier mon père, qui a eu la gentillesse de relire toutes les parties et corrections que je lui envoyais, sacrifiant ainsi du temps pour moi sur sa première année de retraite.
+
+\shorttoc{Sommaire}{0}
+\addcontentsline{toc}{chapter}{Sommaire}
+\fancyhead[LO, RE]{Sommaire}
+
+\mainmatter
+\part*{Introduction}
+\addcontentsline{toc}{part}{Introduction}
+\fancyhead[LO, RE]{Introduction}
+Dans le cadre de la validation de la 2ème année du master \og Technologies numériques appliquées à l'histoire \fg{}, il est nécessaire d'effectuer un stage de fin d'année pour mettre à profit les connaissances développées tout au long de la seconde année, tout en s'appuyant sur un travail dans le domaine des sciences humaines et sociales. À travers le stage, nous avons la possibilité de participer à un projet établi, déjà développé ou à ses débuts et d'apporter nos connaissances pour développer et mener à bien ce projet, tout en étant rattaché à une institution spécialisée, qui est en charge de ce dernier.
+
+Pour ma validation de M2, je travaille sur un projet qui mobilise des connaissances et des techniques de la linguistique, du droit, de l'histoire et des sciences informatiques. Il est développé et soutenu en partie par l'École des Hautes Études en Sciences Sociales (EHESS), au sein du centre Georg Simmel et de la Plateforme en géomatique et humanités numériques, à laquelle est rattachée mon encadrante de stage, Carmen Brando (UMR 8558 EHESS/CNRS). Le projet MetaLEX\index{Projet MetaLEX} n'en est encore qu'à ses débuts mais l'objectif et les étapes de recherche sont déjà bien établis. Ma collaboration pendant ces quatre mois de stage aura pour but d'apporter une avancée dans le projet, pour ses développements futurs, pour confirmer l'orientation que prendra le travail et une recherche de financement est envisagée auprès des organismes comme l'Agence Nationale de la Recherche (ANR) dans le cadre des appels à projet ANR-DFG.
+
+Avant de commencer la présentation et les explications de ce qui constitue le cœur du stage, il est nécessaire de présenter un peu plus en détail les éléments de contexte de ce stage. Par conséquent, je présenterai tout d'abord l'institution où il s'est effectué, puis je détaillerai le projet et ses composants et enfin, j'exposerai les éléments qui doivent composer le stage et auquel je dois répondre pour mener à bien la tâche qui m'a été assignée.
+
+\chapter{L'institution~: l'École des Hautes Études en Sciences Sociales}
+\input{Introduction/chap1.tex}
+\chapter{Le projet~: MetaLEX - Dictionnaire historique du droit et des institutions et pratiques judiciaires}
+\input{Introduction/chap2.tex}
+\chapter{Le stage}
+\input{Introduction/chap3.tex}
+
+\part{Comment réaliser le projet~: les éléments à disposition}
+\fancyhead[LO, RE]{Comment réaliser le projet}
+Pour permettre d'initier le lancement du projet, il est fondamental de s'intéresser tout d'abord à son état actuel et celui des composants que nous avons déjà à disposition. 
+Par conséquent, cette première partie aura pour but de présenter le projet au début du stage. Nous pourrons tout d'abord observer ce qui avait déjà été réalisé, ainsi que les objectifs auxquels ce travail se rapporte. Ensuite, nous nous intéresserons à la source qui guidera la majorité du projet~: le \emph{Traité des délits et des peines}\index{Traite des delits et des peines@Traité des délits et des peines} du marquis de Beccaria\index{Beccaria, marquis de}, afin d'appréhender son intérêt au sein du projet.
+
+\chapter{État du projet, objectifs et limites}
+\input{Partie1/P1_chap1.tex}
+\chapter{La source~: le \emph{Traité des délits et des peines} de Beccaria}
+\input{Partie1/P1_chap2.tex}
+
+\part{Traitement et manipulation de la source}
+\fancyhead[LO, RE]{Traitement et manipulation de la source}
+Le déroulement du projet est enclenché, les objectifs sont fixés et la source de travail est à disposition~: il est donc temps d'entreprendre une étape essentielle pour réaliser à bien ce projet. Il n'est pas possible d'effectuer des analyses textuelles satisfaisantes et encore moins d'entamer un processus d'alignement\index{Alignement}, dans l'état actuel du corpus~: les transcriptions suivent la structure du manuscrit et sont de ce fait inexploitables. Elles ne sont pas nombreuses et donc n'offrent qu'une possibilité limitée d'études et elles présentent pour la plupart des erreurs (\acrshort{ocr} notamment) qui demandent à être examinées, pour déterminer l'utilisation que pourront en faire les outils de statistiques textuelles.
+
+De ce fait, cette seconde partie aura pour but de présenter les tâches réalisées et les méthodes utilisées sur le corpus pour fournir une production exploitable pour la phase d'analyse de texte. Tout d'abord, nous nous occupons d'obtenir un corpus, au format texte, plus fourni, par le biais de la transcription de nouveaux chapitres. Ensuite, nous tâcherons d'améliorer la mise en forme du texte, pour qu'il soit plus proche d'un format traditionnel d'analyse, c'est-à-dire un texte structuré par des phrases et des paragraphes. Enfin, nous plongerons un peu plus profondément dans le texte, en allant regarder et vérifier le vocabulaire pour relever des éléments qu'il sera essentiel de notifier aux outils ou d'annoter dans le texte pour un meilleur rendu du travail. 
+
+\chapter{Augmenter les sources d'analyse}
+\input{Partie2/P2_chap1.tex}
+\chapter{\label{chap_mise_en_forme}Transformer et nettoyer le texte pour une analyse adaptée à nos objectifs}
+\input{Partie2/P2_chap2.tex}
+\chapter{Établir une correction orthographique et une annotation linguistique semi-automatique}
+\input{Partie2/P2_chap3.tex}
+
+\part{Vers un alignement de texte~: analyse et exploration de la source}
+\fancyhead[LO, RE]{Vers un alignement de texte}
+Après avoir finalisé la transcription et la correction des chapitres choisis, le corpus est prêt à être étudié pour aboutir finalement à l'alignement\index{Alignement} recherché dans le cadre du projet de stage. Il existe de nombreux moyens d'analyser un texte, en fonction de ce que l'on veut faire ressortir de notre examen et celui-ci utilisera plusieurs de ces techniques.
+
+Dans notre cas précis, nous allons principalement faire une analyse statistique des données textuelles de la source. Au fur et à mesure des étapes et à l'aide de plusieurs outils spécifiques, nous interrogerons le texte, premièrement, de manière assez superficielle, puis en se plongeant plus en avant dans le texte et enfin atteindre notre objectif, l'alignement\index{Alignement}, qui ne sera ici qu'un alignement partiel\index{Alignement!alignement partiel}, qui tient compte d'un lexique de termes juridiques préalablement choisis et annotés dans le texte.
+
+\chapter{Appréhender la source et se familiariser avec son contenu}
+\input{Partie3/P3_chap1.tex}
+\chapter{\label{chap_annotations}Création d'annotations sur le texte à partir d'un lexique juridique}
+\input{Partie3/P3_chap2.tex}
+\chapter{Exploitation du contenu des corpus par les statistiques textuelles}
+\input{Partie3/P3_chap3.tex}
+\chapter{Comparer les éditions et les traductions~: méthodes d'alignement partiel des textes}
+\input{Partie3/P3_chap4.tex}
+
+\part*{Conclusion}
+\addcontentsline{toc}{part}{Conclusion}
+\input{Conclusion/conclusion.tex}
+
+\appendix
+\part*{Annexes}
+\addcontentsline{toc}{part}{Annexes}
+\input{Annexes/script.tex}
+\input{Annexes/glossaire.tex}
+\input{Annexes/programmes.tex}
+\input{Annexes/seminaires.tex}
+\input{Annexes/chronologie.tex}
+
+\backmatter
+
+\part*{Sources bibliographiques}
+\addcontentsline{toc}{part}{Sources bibliographiques}
+\fancyhead[LO, RE]{Sources bibliographiques}
+\chapter*{Corpus}
+\addcontentsline{toc}{chapter}{Corpus}
+Ce corpus comprend toutes les éditions sur lesquelles je me suis basée pour travailler le projet MetaLEX\index{Projet MetaLEX} pendant le stage et réaliser la généalogie, les \acrshort{ocr} et l'alignement\index{Alignement} des textes. Les éditions sont divisées par langue puis classées par année de parution.
+
+\printbibliography[heading=subbibintoc, keyword={italien}, title={Éditions italiennes}]
+\printbibliography[heading=subbibintoc, keyword={français}, title={Éditions françaises}]
+\printbibliography[heading=subbibintoc, keyword={anglais}, title={Éditions anglaises}]
+\printbibliography[heading=subbibintoc, keyword={allemand}, title={Éditions allemandes}]
+
+\chapter*{Bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
+Cette bibliographie comprend divers articles, ouvrages et références à des éléments sur lequel je me suis appuyée pour rédiger mon mémoire, ainsi que pour réaliser les différentes étapes du projet développé pendant le stage. Elle est répartie par thèmes puis classée par ordre alphabétique, suivant les multiples disciplines sur lesquelles j'ai travaillé.
+
+\newrefcontext[sorting=nyt]
+\printbibliography[heading = subbibintoc, keyword={alignement}, title={Alignement}]
+\printbibliography[heading = subbibintoc, keyword={beccaria}, title={Littérature}]
+\printbibliography[heading = subbibintoc, keyword={ocr}, title={Reconnaissance Optique de Caractères (OCR)}]
+\printbibliography[heading = subbibintoc, keyword={analyse statistique}, title={Statistiques textuelles}]
+\printbibliography[heading = subbibintoc, keyword={tal}, title={Traitement Automatique des Langues (TAL)}]
+
+\printglossary[type=\acronymtype, title={Liste des acronymes}]
+\printindex
+\renewcommand{\listfigurename}{Liste des figures}
+\listoffigures
+\fancyhead[LO, RE]{Liste des figures}
+\listoftables
+\fancyhead[LO, RE]{Table des matières}
+\tableofcontents
+
+\end{document}

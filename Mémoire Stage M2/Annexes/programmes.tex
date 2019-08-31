@@ -1,0 +1,109 @@
+\chapter{Outils et programmes}
+\fancyhead[LO, RE]{Outils et programmes}
+
+Le travail effectué pendant le stage a requis l'utilisation de nombreux logiciels, outils, modules et programmes pour la réalisation des étapes du projet. Dans cette annexe, nous présentons ces éléments, suivant une classification thématique, en fournissant le lien URL vers lequel il est possible de trouver de plus amples explications, ainsi qu'une définition rapide et une description de son fonctionnement.
+
+\section{Général}
+\paragraph{ElementTree} : \url{https://docs.python.org/fr/3/library/xml.etree.elementtree.html}
+
+Module Python qui donne la possibilité d'analyser et de créer des données pour du \textsc{xml}. Il s'utilise par le biais de deux éléments : \textit{ElementTree} et \textit{Element}. \textit{ElementTree} représente le fichier \textsc{xml} comme un arbre et \textit{Element} représente un nœud dans l'arbre. À l'aide de diverses fonctions et de plusieurs classes d'objets, il est possible de rechercher des informations dans l'arbre \textsc{xml}, d'effectuer des modifications dans le contenu de cet arbre ou même de créer, à partir de rien, un arbre \textsc{xml} avec des balises, des attributs et des valeurs.
+
+\paragraph{Github} : \url{https://github.com/}
+
+Github est une plateforme web de versionnage et de collaboration qui permet notamment de développer des logiciels et autres applications. Elle donne la possibilité de versionner son code source et les différents avancées de son travail, en gardant l'historique de tous les changements faits. Elle permet la collaboration entre développeurs à l'aide d'outil tel que \textit{issues} ou \textit{pull request} qui permet de prendre en compte les améliorations ou modifications que pourraient proposer d'autres personnes et de les ajouter à son code source. Le travail est collaboratif aussi grâce à l'aide de branches et de \textit{merge} qui permet de travailler sur des bouts de code et de rajouter cela au projet principal (branche master) par la suite. Le travail peut se faire à distance et peut être renvoyer sur le site ou à des collaborateurs à l'aide d'autres fonctions.
+
+\paragraph{Python} : \url{https://docs.python.org/fr/3/}
+
+Python est un langage de programmation qui permet une approche simple et efficace de la programmation orientée objet. C'est un langage idéal pour l'écriture de script et le développement rapide d'applications. L'interpréteur Python possède une vaste bibliothèque et disposent de très nombreux modules et méthodes pour permettre de manipuler une multitude de documents divers.
+
+\paragraph{Re \textit{(Opérations à base d'expressions régulières)}} :
+
+\url{https://docs.python.org/fr/3/library/re.html}
+
+Module Python permettant de réaliser des opérations sur des chaînes de caractères à l'aide d'expressions régulières.
+
+\paragraph{Script Shell} : \url{https://doc.ubuntu-fr.org/tutoriel/script_shell}
+
+Script permettant d'automatiser une série d'opérations : il contient plusieurs lignes de commandes qui seront exécutées, en suivant l'ordre d'écriture, par le terminal. Cela permet de garder traces des commandes à effectuer pour exécuter ses scripts mais surtout de faciliter le travail dans le cas où il est nécessaire d'exécuter un grand nombre de commandes conjointement.
+
+Pour que le script fonctionne, il doit commencer par la ligne
+\mintinline[breaklines]{bash}{#!/bin/bash} et avoir l'extension .sh pour que l'interpréteur de commande le reconnaisse.
+
+\paragraph{Sys \textit{(Paramètres et fonctions propres à des systèmes)}}:
+
+\url{https://docs.python.org/fr/3/library/sys.html}
+
+Module Python qui permet de fournir un accès à plusieurs variables dans l'interpréteur de commande. Avec cela, on peut ainsi appeler les différents arguments dans l'interpréteur de commande pour réaliser ses opérations : sys.argv[0] correspond au script et les arguments venant après seront définis dans le script Python.
+
+\section{Traitement d'images}
+\paragraph{PDFImages} : \url{https://www.systutorials.com/docs/linux/man/1-pdfimages/}
+
+Extracteur d'images proposé par Linux qui donne la possibilité de convertir des fichiers/documents \textsc{pdf} en \textsc{pbm} (par défaut) et \textsc{png}/\textsc{tiff}/\textsc{jpeg} si spécification dans la ligne de commande. L'outil propose diverses options permettant de faire apparaître plusieurs types d'informations à propos du fichier converti.
+
+\paragraph{PDF to JPEG}
+Application Windows donnant la possibilité de transformer un fichier \textsc{pdf}, quelque soit sa taille, en plusieurs pages de \textsc{jpeg} de manière rapide et efficace. La démarche demande de choisir le fichier d'entrée, puis de sélectionner un dossier de sortie où seront sauvegardés les images et ensuite, il suffit de convertir.
+
+\paragraph{PIL \textit{(Python Imaging Library)} ou Pillow} :
+
+\url{https://github.com/python-pillow/Pillow}
+
+\url{https://he-arc.github.io/livre-python/pillow/}
+
+Bibliothèque de traitements d'images qui offre un accès rapide à toutes les données contenues dans une image. Les trois fonctions de cette bibliothèque est l'archivage, l'affichage et le traitement d'images pour pouvoir manipuler et modifier à sa convenance les images présentées pour le traitement.
+
+\paragraph{ScanTailor} : \url{https://github.com/scantailor/scantailor}
+
+ScanTailor est un outil qui s'utilise avec des documents scannés. Il s'occupe de les nettoyer et de les améliorer pour une meilleure exploitation par la suite. Il propose diverses manipulations : 
+\begin{itemize}
+    \item découpage de page --> dans les cas par exemple où un livre a été scanné et un bout de l'autre page apparaît, il est possible de ne pas la prendre en compte dans la modification du scan~;
+    \item rotation --> le document peut être tourné ou légèrement incliné dans les cas notamment où le scan ne serait pas droit~;
+    \item marges --> l'outil permet de manipuler les marges à notre convenance~;
+    \item sélection du contenu --> on peut choisir quelle partie du texte on souhaite conserver pour une manipulation future et pour la transformation du document.
+\end{itemize}
+Une fois ces manipulations effectuées, le document peut être rendu notamment en noir et blanc, pour une meilleure clarté, où il est également possible d'augmenter ou atténuer la présence de l'encre sur le document. L'outil offre en plus une option \textbf{balayage} plus ou moins importante, selon notre choix, pour enlever tous les points, ratures ou marque de détérioration du document qui entrerait en conflit avec des manipulations futures.
+
+\paragraph{Tesseract} : \url{https://github.com/tesseract-ocr/tesseract}
+
+Tesseract est un outil en ligne de commande d'\acrshort{ocr}\index{OCR} en open source qui va lire une image qu'on lui donne et la ressortir dans un fichier texte ou \textsc{pdf} en fonction de ce qu'on lui précise. Il a également la possibilité de lire un certain nombre de langues, ce qui lui permet d'être assez efficace en de multiples circonstances. Ces langues doivent s'installer en plus de l'installation de Tesseract, de la même manière qu'en rajoutant un nouveau package. Il est possible de voir sur le Github du module toutes les langues à disposition pour travailler avec cet outil.
+
+\section{Traitement automatique des langues (TAL)}
+
+\paragraph{SpellChecker} : \url{https://github.com/barrust/pyspellchecker}
+
+Module Python de vérificateur orthographique, que l'on peut appliquer à un texte pour trouver des mots erronés, des mots connus ou des fréquences de mots en se référant à des dictionnaires de langues données. Il donne également la possibilité  d'opérer des changements de mots, en proposant des corrections de mots erronées, soit en donnant le mot le plus approprié, soit en soumettant des candidats.
+
+\paragraph{TreeTagger} : \url{https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/}
+
+Outil d'annotations d'un texte avec sa catégorie grammaticale et son lemme. L'outil fonctionne pour la quasi-totalité des langues européennes, ainsi que le chinois, le swahili, le copte, le russe, le latin et l'ancien français. Il peut s'adapter à d'autres langues s'il est entrainé par un lexique et un corpus de formation. 
+
+\section{Statistiques textuelles}
+\paragraph{Juxta Commons} : \url{http://juxtacommons.org/}
+
+Le logiciel de \textsc{juxta commons} a pour objectif d'observer les différences qui existent entre plusieurs versions d'un même texte (diverses éditions) à l'aide de la collation (processus de détermination des différences entre des textes). L'intérêt est d'étudier les variantes introduites dans les nouvelles versions éditées d'un texte, en se basant sur le principe des témoins. Une version est considérée comme \og témoin de base \fg{} et grâce à la collation, le logiciel compare avec les autres témoins.
+
+Trois visualisations principales sont proposées par \textsc{juxta commons} : une carte thermique, qui superpose les textes et montre les différences à l'aide d'un changement de teinte en fonction de l'importance des changements, une vue côte à côte avec des surlignages sur les zones qui changent entre l'une et l'autre des versions et un histogramme qui offre une vision globale du texte pour illustrer les parties les plus modifiées. Le logiciel permet également la production d'une édition critique en \textsc{xml} qui souligne les différences entre le témoin de base et les autres témoins à l'aide des balises <app> et <rdg> et de l'attribut \og @wit \fg{}.
+
+\paragraph{R} : \url{https://www.r-project.org/}
+
+Langage et environnement pour l'information statistique et les graphiques, le logiciel \textsc{r} fournit une grande variété de techniques statistiques (modélisation linéaire et non linéaire, tests statistiques classiques, analyse de séries chronologiques, classification, regroupement,…) et graphiques et son environnement est une suite intégrée de logiciels destinés à la manipulation de données, au calcul et à l'affichage graphique qui comprend une installation efficace de traitement et de stockage des données,une suite d'opérateurs pour les calculs sur les tableaux, une vaste collection cohérente et intégrée d'outils intermédiaires pour l'analyse de données, des installations graphiques pour l'analyse des données et leur affichage à l'écran ou sur papier, et un langage de programmation bien développé, simple et efficace.
+
+Le logiciel est open-source et gratuit et est disponible sur les trois systèmes d'exploitation principaux~: Windows, Mac OS X et Linux.
+
+\paragraph{RStudio} : \url{https://www.rstudio.com/}
+
+Environnement de développement intégré fonctionnel, libre, gratuit et multiplateforme pour exécuter le langage \textsc{r}.
+
+\paragraph{TXM} : \url{http://textometrie.ens-lyon.fr/} 
+
+La plateforme \textsc{txm} a pour but de faciliter le travail de textométrie\index{Textometrie@Textométrie}, en mettant en place des techniques automatiques pour l'analyse de grands corpus de texte. Le corpus peut se baser sur des textes en \textsc{xml}, en \textsc{csv} ou même en simple fichier texte.
+
+À partir de là, la plateforme offre la possibilité de faire de nombreuses manipulations avec son corpus, tel que construire des sous corpus à partir de certaines métadonnées, si l'on veut des précisions sur certains documents en particulier, construire des partitions pour ensuite faire apparaître des dimensions de corpus, des analyses factuelles de correspondances, du vocabulaire du texte ou autre, faire apparaître les concordances ou les cooccurrences en fonction d'un mot ou lemme ou produire de multiples statistiques sur le corpus. Tous ces résultats peuvent par la suite être exporté de \textsc{txm} sous deux supports, \textsc{csv} (listes) et \textsc{svg} (graphiques).
+
+Le logiciel est open-source et gratuit et est disponible sur les trois systèmes d'exploitation les plus utilisées~: Windows, Mac OS X et Linux. Il est doté d'une communauté d'utilisateurs, qui est alimentée par deux listes de diffusion et un site wiki.
+
+\section{Alignement de texte}
+\paragraph{Medite}: \url{http://obvil.lip6.fr/medite/}
+
+\textsc{medite} est un logiciel d'alignement\index{Alignement} de textes permettant l'identification de transformations entre une version et une autre d'un même texte. Il a pour but de mettre en évidence les différences et les invariants, à l'aide d'un algorithme d'alignement\index{Alignement} de textes qui se basent sur les homologies. Il fait ainsi apparaître les suppressions, les insertions, les remplacements et les déplacements qui ont été effectués dans le texte, mettant ainsi en avant toutes les différences possibles que l'on peut observer dans le texte.
+
+Le logiciel peut traiter n'importe quel texte, quelque soit la langue et il est possible de le paramétrer en fonction de ce que l'on veut faire apparaître : il peut être ou non sensible à la casse, aux caractères accentués ou aux séparateurs. On peut aussi choisir de faire apparaître seulement les blocs communs entre les deux textes et ainsi, ce sont eux qui seront colorés et non les différences. On peut ainsi choisir de faire ressortir soit les différences, soit les invariants. Enfin, il est également possible de modifier les paramètres de l'algorithme pour qu'ils prennent plus ou moins en compte certaines données pour faire apparaître les différences et invariants du texte.
